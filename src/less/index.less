@@ -1,0 +1,15 @@
+@base-font-size: 16px;
+
+:root, html {
+  font-size: (unit(@base-font-size) / 16 * 100%);
+}
+
+.root-font-size(@size) when (ispixel(@size)) {
+  font-size: @size;
+  font-size: unit((@size / @base-font-size), rem);
+}
+
+.root-font-size(@size) when (ispercentage(@size)) {
+  font-size: unit((@size / 100 * @base-font-size), px);
+  font-size: unit((@size / 100), rem);
+}

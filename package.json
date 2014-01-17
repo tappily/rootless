@@ -1,0 +1,32 @@
+{
+  "name": "rootless",
+  "version": "0.0.0",
+  "description": "Root Em mixin for LESS",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tappily/rootless.git"
+  },
+  "keywords": [
+    "less",
+    "rem"
+  ],
+  "author": "tappily",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tappily/rootless/issues"
+  },
+  "homepage": "https://github.com/tappily/rootless",
+  "devDependencies": {
+    "grunt-contrib-csslint": "~0.1.2",
+    "grunt": "~0.4.2",
+    "load-grunt-tasks": "~0.1.3",
+    "grunt-lesslint": "~0.13.0",
+    "grunt-contrib-jshint": "~0.6.5",
+    "grunt-release": "~0.5.1",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
