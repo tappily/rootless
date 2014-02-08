@@ -1,15 +1,18 @@
-.root(@base-font-size:16px) {
+//defaults
+@root-size: 16px;
+
+.root() {
   html {
-    font-size: (unit(@base-font-size) / 16 * 100%);
+    font-size: (unit(@root-size) / 16 * 100%);
   }
 }
 
 .root-font-size(@size) when (ispixel(@size)) {
   font-size: @size;
-  font-size: unit((@size / @base-font-size), rem);
+  font-size: unit(round((@size / @root-size), 2), rem);
 }
 
 .root-font-size(@size) when (ispercentage(@size)) {
-  font-size: unit((@size / 100 * @base-font-size), px);
-  font-size: unit((@size / 100), rem);
+  font-size: unit(round((@size / 100 * @root-size)), px);
+  font-size: unit(round((@size / 100), 2), rem);
 }

@@ -5,14 +5,15 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        lesslint: {
-            options: {
-                formatters: [{
-                    id: 'csslint-xml',
-                    dest: 'report/lesslint.xml'
-                }]
-            },
-            src: ['src/less/*.less']
+        clean: {
+            temp: ['.grunt']
+        },
+        less: {
+            test: {
+                files: {
+                    '.grunt/less/validate.css': 'src/less/index.less'
+                }
+            }
         },
         jshint: {
             options: {
@@ -28,11 +29,11 @@ module.exports = function(grunt) {
         watch: {
             less: {
                 files: 'src/less/*.less',
-                tasks: ['lesslint']
+                tasks: ['clean', 'less']
             }
         }
     });
 
-    grunt.registerTask('default', ['clean', 'test']);
-    grunt.registerTask('test', ['jshint', 'lesslint']);
+    grunt.registerTask('default', []);
+    grunt.registerTask('test', ['jshint', 'less']);
 };
